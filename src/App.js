@@ -133,6 +133,7 @@ function App() {
       {!isLoggedIn && !location.pathname.startsWith("/resetPassword") && (
         <Redirect to="/login" />
       )}
+      {isLoggedIn && location.pathname === "/" && <Redirect to="/groups" />}
       <Switch>
         <Route path="/resetPassword/:token" exact>
           <PasswordResetForm />
